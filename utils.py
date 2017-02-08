@@ -25,10 +25,10 @@ def load_image(filename, shape=None, max_size=None):
         size = size.astype(int)
 
         # Resize the image.
-        image = image.resize(size, PIL.Image.LANCZOS) # PIL.Image.LANCZOS is one of resampling filter
+        image = image.resize(size, PIL.Image.BILINEAR) # PIL.Image.LANCZOS is one of resampling filter
 
     if shape is not None:
-        image = image.resize(shape, PIL.Image.LANCZOS) # PIL.Image.LANCZOS is one of resampling filter
+        image = image.resize(shape, PIL.Image.BILINEAR) # PIL.Image.LANCZOS is one of resampling filter
 
     # Convert to numpy floating-point array.
     return np.float32(image)
